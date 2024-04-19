@@ -1,0 +1,10 @@
+---
+version: '3'
+services:
+  web-proxy:
+    image: venkynagidi/two:mydockerimage
+    ports:
+      - "3000:80"
+    deploy:
+      replicas: 3
+      
