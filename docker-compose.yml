@@ -5,6 +5,8 @@ services:
     image: venkynagidi/two:mydockerimage
     ports:
       - "3000:80"
+    networks:
+      - "network-one"
     deploy:
       replicas: 3
       update_config:
@@ -12,4 +14,6 @@ services:
         delay: 10s
       restart_policy:
         condition: on-failure
-      
+networks:
+  network-one:
+    driver: bridge
